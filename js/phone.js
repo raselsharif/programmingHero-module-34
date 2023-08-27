@@ -15,7 +15,7 @@ const displayPhone = phones => {
     } else {
         showAllBtn.classList.add('hide')
     }
-    
+
     phones = phones.slice(0, 12)
 
     phones.forEach(phone => {
@@ -27,14 +27,26 @@ const displayPhone = phones => {
         <img src="${phone.image}" alt="phone image">
         `
         phoneContainer.appendChild(phoneDiv)
-    })
+    });
+    dataLoading(false)
 }
 
 
 const searchPhone = () => {
+    dataLoading(true)
     const inputText = document.getElementById('search-input')
     const textValue = inputText.value;
     loadPhone(textValue)
+}
+
+const dataLoading = (isLoading) => {
+    const dataLoadingDiv = document.getElementById('data-loading');
+    if (isLoading) {
+        dataLoadingDiv.classList.add('data-hide')
+    } else {
+        dataLoadingDiv.classList.remove('data-hide')
+    }
+
 }
 
 // loadPhone();

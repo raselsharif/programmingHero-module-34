@@ -35,9 +35,18 @@
         #show-all-btn {
             display: none;
         }
+
         #show-all-btn.hide {
             display: inline-block;
             margin-top: 10px;
+        }
+
+        #data-loading {
+            display: none;
+        }
+
+        #data-loading.data-hide {
+            display: block;
         }
     </style>
 </head>
@@ -54,6 +63,9 @@
 
             </div>
             <button id="show-all-btn" class="">show all</button>
+            <div id="data-loading" class="">
+                <h2>Data Loading....</h2>
+            </div>
         </section>
     </main>
 
