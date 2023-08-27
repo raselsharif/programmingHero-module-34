@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Hunter</title>
+    <style>
+        .container {
+            max-width: 1170px;
+            margin: 0 auto;
+        }
+
+        #phone-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        #phone-container div {
+            border: 1px solid black;
+            padding: 20px 15px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <main class="container">
+        <section>
+            <h1>All phones</h1>
+            <div id="phone-container">
+
+            </div>
+        </section>
+    </main>
 
     <script src="js/phone.js"></script>
 </body>
+
 </html>
