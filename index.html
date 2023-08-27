@@ -21,6 +21,24 @@
             border: 1px solid black;
             padding: 20px 15px;
         }
+
+        input,
+        button {
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #show-all-btn {
+            display: none;
+        }
+        #show-all-btn.hide {
+            display: inline-block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -28,9 +46,14 @@
     <main class="container">
         <section>
             <h1>All phones</h1>
+            <div>
+                <input type="text" name="" id="search-input" placeholder="Search Here">
+                <button onclick="searchPhone()">Search</button>
+            </div>
             <div id="phone-container">
 
             </div>
+            <button id="show-all-btn" class="">show all</button>
         </section>
     </main>
 
