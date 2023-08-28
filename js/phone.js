@@ -13,10 +13,11 @@ const displayPhone = (phones, isShowAll) => {
     phoneContainer.textContent = "";
 
     const showAllBtn = document.getElementById('show-all-btn');
-    if (phones.length <= 12 && !isShowAll) {
-        showAllBtn.classList.remove('hide')
-    } else {
+
+    if (phones.length > 12 && !isShowAll) {
         showAllBtn.classList.add('hide')
+    } else {
+        showAllBtn.classList.remove('hide')
     }
 
     if (!isShowAll) {
@@ -29,7 +30,9 @@ const displayPhone = (phones, isShowAll) => {
         <h2>Brand: ${phone.brand}</h2>
         <h3>Phone: ${phone.phone_name}</h3>
         <h2 style="word-break: break-all;">Model: ${phone.slug}</h2>
-        <img src="${phone.image}" alt="phone image">
+        <img src="${phone.image}" alt="phone image"> <br>
+
+        <button onclick="displayDetails('${phone.slug}')">Details</button>
         `
         phoneContainer.appendChild(phoneDiv)
     });
@@ -59,5 +62,33 @@ const showAll = () => {
     searchPhone(true)
 }
 
+// load phone details data from API
+const loadPhoneDetails = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    // console.log(data);
+    const phoneDetails = data.data;
+    console.log(phoneDetails);
+    // displayDetails(phoneDetails);
+}
 
-// loadPhone();
+// show details
+const displayDetails = (phoneDetails) => {
+    // console.log(id);
+    console.log(phoneDetails);
+    // const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    // const data = await res.json();
+    // console.log(data);
+    // const phoneDetails = data.data;
+    // console.log(phoneDetails.brand);
+
+    const showDetailContainer = document.getElementById('show-details');
+    const detailsDiv = document.createElement('div');
+
+    detailsDiv.innerHTML = `
+    `
+
+    showDetailContainer.appendChild(detailsDiv);
+}
+
+loadPhone();
