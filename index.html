@@ -5,50 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Hunter</title>
-    <style>
-        .container {
-            max-width: 1170px;
-            margin: 0 auto;
-        }
-
-        #phone-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        #phone-container div {
-            border: 1px solid black;
-            padding: 20px 15px;
-        }
-
-        input,
-        button {
-            padding: 10px 15px;
-            margin-bottom: 15px;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        #show-all-btn {
-            display: none;
-        }
-
-        #show-all-btn.hide {
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        #data-loading {
-            display: none;
-        }
-
-        #data-loading.data-hide {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -62,7 +19,7 @@
             <div id="phone-container">
 
             </div>
-            <button id="show-all-btn" class="">show all</button>
+            <button onclick="showAll()" id="show-all-btn" class="">show all</button>
             <div id="data-loading" class="">
                 <h2>Data Loading....</h2>
             </div>

@@ -1,0 +1,42 @@
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+#phone-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#phone-container div {
+    border: 1px solid black;
+    padding: 20px 15px;
+}
+
+input,
+button {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#show-all-btn {
+    display: none;
+}
+
+#show-all-btn.hide {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#data-loading {
+    display: none;
+}
+
+#data-loading.data-hide {
+    display: block;
+}
